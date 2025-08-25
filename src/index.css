@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbars on mobile tab row */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Mobile-friendly responsive adjustments */
+@media (max-width: 768px) {
+  .bg-terminal-bg { font-size: 14px; }
+  .font-mono { font-size: 12px; }
+}
+
+/* Custom scrollbar for better visual consistency */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Custom styles for better performance */
+.stage-transition {
+  will-change: transform, opacity;
+}
+
+.token-highlight {
+  animation: token-glow 0.6s ease-in-out;
+}
+
+@keyframes token-glow {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(79, 193, 255, 0.3); }
+  100% { background-color: transparent; }
+}
